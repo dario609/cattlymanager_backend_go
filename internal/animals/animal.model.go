@@ -12,8 +12,10 @@ type Animal struct {
 	BirthDate    time.Time `json:"birth_date"`
 	BirthWeight  float64   `json:"birth_weight"`
 
-	LocationID uint   `json:"location_id"` // For movement module
-	Status     string `json:"status"`      // Active, Sold, Dead
+	LocationID  uint   `json:"location_id"` // For movement module
+	GroupID     uint   `json:"group_id"`    // grouping / herd id
+	EarTagColor string `json:"ear_tag_color"`
+	Status      string `json:"status"` // Active, Sold, Dead
 
 	CreatedAt time.Time
 	UpdatedAt time.Time

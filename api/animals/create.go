@@ -12,14 +12,16 @@ import (
 )
 
 type createAnimalRequest struct {
-	EarTag      string      `json:"ear_tag"`
-	ElectronicID string     `json:"electronic_id"`
-	Name        string      `json:"name"`
-	Breed       string      `json:"breed"`
-	Sex         string      `json:"sex"`
-	Status      string      `json:"status"`
-	BirthDate   string      `json:"birth_date"`
-	BirthWeight interface{} `json:"birth_weight"`
+	EarTag       string      `json:"ear_tag"`
+	ElectronicID string      `json:"electronic_id"`
+	Name         string      `json:"name"`
+	Breed        string      `json:"breed"`
+	Sex          string      `json:"sex"`
+	GroupID      uint        `json:"group_id"`
+	EarTagColor  string      `json:"ear_tag_color"`
+	Status       string      `json:"status"`
+	BirthDate    string      `json:"birth_date"`
+	BirthWeight  interface{} `json:"birth_weight"`
 }
 
 func CreateAnimal(c *gin.Context) {
@@ -59,6 +61,8 @@ func CreateAnimal(c *gin.Context) {
 		Name:         req.Name,
 		Breed:        req.Breed,
 		Sex:          req.Sex,
+		GroupID:      req.GroupID,
+		EarTagColor:  req.EarTagColor,
 		Status:       req.Status,
 	}
 
