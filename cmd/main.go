@@ -5,6 +5,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
 
+	activitiesapi "livestock-saas/server/api/activities"
 	animalsapi "livestock-saas/server/api/animals"
 	authapi "livestock-saas/server/api/auth"
 	usersapi "livestock-saas/server/api/users"
@@ -28,6 +29,7 @@ func main() {
 
 	usersapi.RegisterRoutes(r)
 	authapi.RegisterRoutes(r)
+	activitiesapi.RegisterRoutes(r)
 	animalsapi.RegisterRoutes(r)
 
 	r.Run(":8080")

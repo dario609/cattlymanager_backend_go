@@ -5,6 +5,7 @@ import (
 	"log"
 	"os"
 
+	"livestock-saas/server/internal/activities"
 	"livestock-saas/server/internal/animals"
 	"livestock-saas/server/internal/users"
 
@@ -33,4 +34,5 @@ func Connect() {
 	fmt.Println("✅ Connected to PostgreSQL")
 	db.AutoMigrate(&users.User{})
 	db.AutoMigrate(&animals.Animal{})
+	db.AutoMigrate(&activities.Activity{})
 }
